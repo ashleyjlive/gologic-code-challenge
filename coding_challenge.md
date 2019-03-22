@@ -12,7 +12,8 @@ Prototype **one** of the following projects:
 
 1. Email Service
 2. Vending Machine
-3. Departure Times
+3. Booking Platform
+4. Departure Times
 
 The UX/UI is totally up to you. If you like, get creative and add additional
 features a user might find useful!
@@ -40,6 +41,23 @@ and a quantity remaining. Users should put in (virtual) money and purchase an it
 After they have purchased an item, they can use the remaining money to purchase another
 item or have the change returned to them. Once they are done they should see a list of
 the items they have purchased.
+
+### Booking Platform
+
+Design a booking platform for users to rent a room. Users should see a list of rooms available
+for rent and be able to click into them to see details about that room. A room at a minimum
+should have the following details:
+
+* Title
+* Images
+* Price
+* Description
+* Address
+* Capacity of room
+
+Users should then be able book that room using their email address, the dates they require and
+how many people will be staying. They should not be able to book a room on a date that has
+already been booked or doesn't have the capacity for the amount of people they require.
 
 ### Departure Times
 
@@ -81,9 +99,10 @@ your challenge.
 
 Here are some technologies we are more familiar with:
 
-* ASP.NET
+* ASP.NET (core), entity framework
 * NodeJS
 * PHP
+* Docker
 
 You are also free to use any web framework. If you choose to use a framework
 that results in boilerplate code in the repository, please detail in your
@@ -94,4 +113,4 @@ README which code was written by you (as opposed to generated code).
 The front-end should ideally be a single page app with a single `index.html`
 linking to external JS/CSS/etc. You may take this opportunity to demonstrate
 your CSS3 or HTML5 knowledge. Use of a framework such as Angular, ReactJS, or VueJS
-is highly recommended.
+as well as a user interface framework like Bootstrap, or Semantic UI is highly recommended.
