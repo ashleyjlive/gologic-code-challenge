@@ -13,7 +13,6 @@ Prototype **one** of the following projects:
 1. Email Service
 2. Vending Machine
 3. Booking Platform
-4. Departure Times
 
 The UX/UI is totally up to you. If you like, get creative and add additional
 features a user might find useful!
@@ -58,18 +57,6 @@ should have the following details:
 Users should then be able book that room using their email address, the dates they require and
 how many people will be staying. They should not be able to book a room on a date that has
 already been booked or doesn't have the capacity for the amount of people they require.
-
-### Departure Times
-
-Create a service that gives real-time departure time for public transportation
-(use freely available public API). The app should geolocalize the user.
-
-Here are some examples of freely available data:
-
-* [511](http://511.org/developer-resources_transit-api.asp) (San Francisco)
-* [Nextbus](http://www.nextbus.com/xmlFeedDocs/NextBusXMLFeed.pdf) (San
-  Francisco)
-* [Transport for London Unified API](https://api.tfl.gov.uk/) (London)
 
 
 Technical spec
