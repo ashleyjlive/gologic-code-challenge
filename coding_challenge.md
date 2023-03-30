@@ -10,36 +10,27 @@ Functional spec
 
 Prototype **one** of the following projects:
 
-1. Email Service
-2. Vending Machine
-3. Booking Platform
+1. Vending Machine
+2. Booking Platform
 
 The UX/UI is totally up to you. If you like, get creative and add additional
 features a user might find useful!
 
-### Email Service
-
-Create a service that accepts the necessary information and sends emails. It
-should provide an abstraction between two different email service providers.
-If one of the services goes down, your service can quickly failover to
-a different provider without affecting your customers.
-
-Example Email Providers:
-
-* [Mailgun](http://www.mailgun.com) - [Simple Send Documentation](http://documentation.mailgun.com/quickstart.html#sending-messages)
-* [SendGrid](https://sendgrid.com/user/signup) - [Simple Send Documentation](https://sendgrid.com/docs/API_Reference/Web_API/mail.html)
-* [Amazon SES](http://aws.amazon.com/ses/) - [Simple Send Documentation](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html)
-
-All listed services are free to try and are pretty painless to sign up for, so
-please register your own test accounts on each.
-
 ### Virtual Vending Machine
 
-Create a virtual vendening machine. There are a selection of products with a price
-and a quantity remaining. Users should put in (virtual) money and purchase an item.
-After they have purchased an item, they can use the remaining money to purchase another
-item or have the change returned to them. Once they are done they should see a list of
-the items they have purchased.
+Create a virtual vendening machine. 
+
+* The vending machine contains a list of products, with a corresponding amount and quantity available.
+* Users put in (virtual) money and purchase an item.
+* After they have purchased an item, they can use the remaining money to purchase another item or have the change returned to them.
+* Once they are done, they should see a list of the items they have purchased.
+
+Some basic business rules:
+
+* Users cannot purchase a product if there is no quantity remaining
+* Users can only purchase a product if they have put in funds equal to or greater than the cost of the product
+* Users should receive the correct change back after the transaction
+* The product quantity should be reduced by the amount of quantity purchased of an item
 
 ### Booking Platform
 
@@ -88,8 +79,6 @@ Here are some technologies we are more familiar with:
 
 * ASP.NET (core), entity framework
 * NodeJS
-* PHP
-* Docker
 
 You are also free to use any web framework. If you choose to use a framework
 that results in boilerplate code in the repository, please detail in your
