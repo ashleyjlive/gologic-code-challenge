@@ -2,6 +2,7 @@
     import VendingMachineUser from './VendingMachineUser.vue';
     import VendingMachineMoney from './VendingMachineMoney.vue';
     import VendingMachineProductSlot from './VendingMachineProductSlot.vue';
+    import VendingMachineUserProduct from './VendingMachineUserProduct.vue';
     import VendingMachineService from '@/services/VendingMachine/VendingMachineService';
     import type VendingMachine from '../models/VendingMachine'
     import type User from '../models/User';
@@ -32,6 +33,7 @@ import UserService from '../services/User/UserService';
             VendingMachineUser,
             VendingMachineMoney,
             VendingMachineProductSlot,
+            VendingMachineUserProduct
         },
     };
 
@@ -48,8 +50,9 @@ import UserService from '../services/User/UserService';
             <VendingMachineProductSlot :slot="slot" v-for="slot in vendingMachine.slots" @product-purchased="fetchData()">
             </VendingMachineProductSlot>
         </div>
-        <ul>
-        </ul>
+        <ol>
+            <VendingMachineUserProduct :product="product" v-for="product in user.products"></VendingMachineUserProduct>
+        </ol>
     </div>
 </template>
 
@@ -58,8 +61,5 @@ import UserService from '../services/User/UserService';
         border: 2px solid;
         height: 80vh;
         width: 60vh;
-    }
-
-    .vending-machine__slots {
     }
 </style>

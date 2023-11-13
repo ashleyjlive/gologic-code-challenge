@@ -7,7 +7,7 @@ namespace VendingMachine.Application.Converters
     {
         public static UserDto ToDTO(this User user)
         {
-            return new UserDto(user.Id, user.Money.Amount);
+            return new UserDto(user.Id, user.Money.Amount, user.Products.Select(product => product.ToDTO()).ToList());
         }
     }
 }

@@ -12,13 +12,7 @@ namespace VendingMachine.Infrastructure.Repositories.VendingMachine
 
         public Domain.Aggregates.VendingMachine Get()
         {
-            if(_GetFromDisk() is Domain.Aggregates.VendingMachine vendingMachine)
-            {
-                return vendingMachine;
-            }
-            var dummy = _CreateDummy();
-            Save(dummy);
-            return dummy;
+            return _GetFromDisk() ?? throw new InvalidOperationException();
         }
 
         public void Save(Domain.Aggregates.VendingMachine vendingMachine)
@@ -42,14 +36,6 @@ namespace VendingMachine.Infrastructure.Repositories.VendingMachine
             {
                 return null;
             }
-        }
-
-        private Domain.Aggregates.VendingMachine _CreateDummy()
-        {
-            return Domain.Aggregates.VendingMachine.Create(new List<VendingMachineProductSlot>()
-            {
-                VendingMachineProductSlot.Create(VendingMachineProduct.Create("Product", Money.FromAmount(50)), Quantity.FromValue(5))
-            }, Money.None);
         }
 
         private Domain.Aggregates.VendingMachine _FromDbType(DbVendingMachine vendingMachine)

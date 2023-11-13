@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { VendingMachineProductSlot } from "../models/VendingMachine"
+import type VendingMachineProductSlot from "../models/VendingMachineProductSlot"
 import VendingMachineService from "../services/VendingMachine/VendingMachineService"
 
     defineProps<{

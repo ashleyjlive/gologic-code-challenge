@@ -13,13 +13,7 @@ namespace VendingMachine.Infrastructure.Repositories.User
 
         public Domain.Aggregates.User Get()
         {
-            if (_GetFromDisk() is Domain.Aggregates.User user)
-            {
-                return user;
-            }
-            var dummy = _CreateDummy();
-            Save(dummy);
-            return dummy;
+            return _GetFromDisk() ?? throw new InvalidOperationException();
         }
 
         public void Save(Domain.Aggregates.User user)
@@ -74,11 +68,6 @@ namespace VendingMachine.Infrastructure.Repositories.User
                 id: vendingMachineProduct.Id,
                 name: vendingMachineProduct.Name,
                 price: vendingMachineProduct.Price.Amount);
-        }
-
-        private Domain.Aggregates.User _CreateDummy()
-        {
-            return Domain.Aggregates.User.Create(Money.FromAmount(50), Enumerable.Empty<VendingMachineProduct>());
         }
     }
 }
