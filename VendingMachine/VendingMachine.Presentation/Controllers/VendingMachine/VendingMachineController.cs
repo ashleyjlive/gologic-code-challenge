@@ -35,7 +35,7 @@ namespace VendingMachine.Presentation.Controllers.VendingMachine
                 await _mediator.Send(new AddMoneyCommand(request.Amount));
             } catch (InsufficientMoneyException)
             {
-                return BadRequest();
+                return Problem("Insufficient user money");
             }
             return Ok();
         }
@@ -47,9 +47,10 @@ namespace VendingMachine.Presentation.Controllers.VendingMachine
             try
             {
                 await _mediator.Send(new PurchaseProductCommand(request.SlotId));
-            } catch (InsufficientMoneyException) 
+            }
+            catch (InsufficientMoneyException)
             {
-                return BadRequest();
+                return Problem("Insufficient money has been entered");
             }
             return Ok();
         }

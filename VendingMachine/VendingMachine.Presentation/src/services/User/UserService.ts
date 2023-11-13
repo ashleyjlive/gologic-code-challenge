@@ -6,7 +6,8 @@ export default class UserService {
         const response = await fetch('/api/v1.0/User');
         if(!response.ok) {
             const error = await response.json() as ErrorResponse;
-            throw new Error(error.description);
+            alert(error.detail);
+            throw new Error(error.detail);
         }
         return await response.json() as User;
     }

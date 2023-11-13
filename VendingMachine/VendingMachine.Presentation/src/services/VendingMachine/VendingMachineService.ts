@@ -6,7 +6,8 @@ export default class VendingMachineService {
         const response = await fetch('/api/v1.0/VendingMachine');
         if(!response.ok) {
             const error = await response.json() as ErrorResponse;
-            throw new Error(error.description);
+            alert(error.detail);
+            throw new Error(error.detail);
         }
         return await response.json() as VendingMachine;
     }
@@ -17,7 +18,8 @@ export default class VendingMachineService {
         });
         if (!response.ok) {
             const error = await response.json() as ErrorResponse;
-            throw new Error(error.description);
+            alert(error.detail);
+            throw new Error(error.detail);
         }
     }
 
@@ -27,7 +29,8 @@ export default class VendingMachineService {
         });
         if (!response.ok) {
             const error = await response.json() as ErrorResponse;
-            throw new Error(error.description);
+            alert(error.detail);
+            throw new Error(error.detail);
         }
     }
 
@@ -37,7 +40,8 @@ export default class VendingMachineService {
         });
         if (!response.ok) {
             const error = await response.json() as ErrorResponse;
-            throw new Error(error.description);
+            alert(error.detail);
+            throw new Error(error.detail);
         }
     }
 }
